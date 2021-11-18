@@ -10,6 +10,7 @@
 * 第三部分：将sampling grid和输入特征联合输入，得到输出
 
 ## [2017 CVPR Deformable Convolutional Networks](https://openaccess.thecvf.com/content_ICCV_2017/papers/Dai_Deformable_Convolutional_Networks_ICCV_2017_paper.pdf)
-
+文章提出可形变deformable convolution和deformable RoI pooling，提升卷积层的空间表达能力。作者在输入特征的每个grid位置学习了offsets，实现具有offsets的卷积和池化。
+* STN对全部通道学习了一个global参数，DCN学习的local offsets.
 # Light network
 ## Mobile Net V1
