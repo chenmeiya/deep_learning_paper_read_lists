@@ -27,5 +27,7 @@ pointwise convolutions是一个1*1的卷积，但对所有的输入通道进行�
 
 ## Re-parameterization
 ### [RepVGG: Making VGG-style ConvNets Great Again](https://openaccess.thecvf.com/content/CVPR2021/papers/Ding_RepVGG_Making_VGG-Style_ConvNets_Great_Again_CVPR_2021_paper.pdf)
+
 链接：https://openaccess.thecvf.com/content/CVPR2021/papers/Ding_RepVGG_Making_VGG-Style_ConvNets_Great_Again_CVPR_2021_paper.pdf
+
 重参数化是一种将多分枝的拓扑结构模块(例如resnet)在推理阶段转换为plain模块，提升推理性能。具体实现是，3 * 3， 1 * 1， skip connection 可以整合为一个3 * 3的 卷积层，多个BN通路也可以整合为一个BN通路，最终将多通路转换为但通路模块，极大降低推理时的算法性能。
