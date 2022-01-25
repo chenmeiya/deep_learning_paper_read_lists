@@ -12,5 +12,20 @@
 ## [2017 CVPR Deformable Convolutional Networks](https://openaccess.thecvf.com/content_ICCV_2017/papers/Dai_Deformable_Convolutional_Networks_ICCV_2017_paper.pdf)
 文章提出可形变deformable convolution和deformable RoI pooling，提升卷积层的空间表达能力。作者在输入特征的每个grid位置学习了offsets，实现具有offsets的卷积和池化。
 * STN对全部通道学习了一个global参数，DCN学习的local offsets.
-# Light network
-## Mobile Net V1
+
+# Light model
+## Network architecture
+### [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](https://arxiv.org/pdf/1704.04861.pdf%EF%BC%89)
+
+链接：https://arxiv.org/pdf/1704.04861.pdf%EF%BC%89
+
+一个三维的卷积，可以展开为一个二维的卷积和一个一维的卷积，也就是作者讲的depthwise convolutions and pointwise convolutions。
+其中depthwise convolutions 相同与普通的卷积，与网络中的卷积不同的是，它仅仅对每单个通道进行处理；
+pointwise convolutions是一个1*1的卷积，但对所有的输入通道进行卷积
+
+作者思想类似于传统卷积操作中常用的分离卷积用于卷积加速计算，解释详见个人博客：https://blog.csdn.net/zseqsc_asd/article/details/109559972?spm=1001.2014.3001.5501
+
+## Re-parameterization
+### [RepVGG: Making VGG-style ConvNets Great Again](https://openaccess.thecvf.com/content/CVPR2021/papers/Ding_RepVGG_Making_VGG-Style_ConvNets_Great_Again_CVPR_2021_paper.pdf)
+链接：https://openaccess.thecvf.com/content/CVPR2021/papers/Ding_RepVGG_Making_VGG-Style_ConvNets_Great_Again_CVPR_2021_paper.pdf
+重参数化是一种将多分枝的拓扑结构模块(例如resnet)在推理阶段转换为plain模块，提升推理性能。具体实现是，3 * 3， 1 * 1， skip connection 可以整合为一个3 * 3的 卷积层，多个BN通路也可以整合为一个BN通路，最终将多通路转换为但通路模块，极大降低推理时的算法性能。
