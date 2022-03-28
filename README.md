@@ -1,7 +1,7 @@
 # deep_learning_paper_read_lists
 
 # Learning invariace to spatial transformation
-## [2015 NIPS saptial transoformer networks](https://proceedings.neurips.cc/paper/2015/file/33ceb07bf4eeb3da587e268d663aba1a-Paper.pdf)
+## [2015 NIPS spatial transformer networks](https://proceedings.neurips.cc/paper/2015/file/33ceb07bf4eeb3da587e268d663aba1a-Paper.pdf)
 文章通过替换网络模块，采用无监督的方式使得网络具备空间表达能力，学习对平移、尺度、旋转和其他几何形变保持不变的能力。max-pooling 存在局部的空间不变性，却难以适应大尺度的空间变化。
 * （其实空间的不变性和感受野是强相关的）
 作者提出了spatial transformers 用于替换原本的卷积层。实现的spatial transformers 包括三个部分，
@@ -31,3 +31,4 @@ pointwise convolutions是一个1*1的卷积，但对所有的输入通道进行�
 链接：https://openaccess.thecvf.com/content/CVPR2021/papers/Ding_RepVGG_Making_VGG-Style_ConvNets_Great_Again_CVPR_2021_paper.pdf
 
 重参数化是一种将多分枝的拓扑结构模块(例如resnet)在推理阶段转换为plain模块，提升推理性能。具体实现是，3 * 3， 1 * 1， skip connection 可以整合为一个3 * 3的 卷积层，多个BN通路也可以整合为一个BN通路，最终将多通路转换为但通路模块，极大降低推理时的算法性能。
+
